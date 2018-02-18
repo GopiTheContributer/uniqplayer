@@ -71,12 +71,12 @@ namespace UniqPlayer
             }
 
             string _fileName = destFilename;
-            int limitValue = existingFileCounts + fileNames.Length;
+            //int limitValue = existingFileCounts + fileNames.Length;
             string temp = string.Empty;
 
-            for (int i = existingFileCounts; i < limitValue; i++)
+            for (int i = 0; i < fileNames.Length; i++)
             {
-                destFilename += "enc_" + i + ".guv";
+                destFilename += "enc_" + GetTimestamp(DateTime.Now) + ".guv";
                 var aes = new AesManaged();
                 aes.BlockSize = aes.LegalBlockSizes[0].MaxSize;
                 aes.KeySize = aes.LegalKeySizes[0].MaxSize;
@@ -88,10 +88,10 @@ namespace UniqPlayer
 
                 try
                 {
-                    for (int j = 0; j < fileNames.Length; j++)
-                    {
-                        temp = fileNames[j];
-                    }
+                    //for (int j = 0; j < fileNames.Length; j++)
+                    //{
+                    //    temp = fileNames[j];
+                    //}
 
                     ICryptoTransform transform = aes.CreateEncryptor(aes.Key, aes.IV);
                     using (var dest = new System.IO.FileStream(destFilename, FileMode.CreateNew, FileAccess.Write, FileShare.None))
@@ -127,6 +127,11 @@ namespace UniqPlayer
             return bytes;
         }
 
+        public static String GetTimestamp(DateTime value)
+        {
+            return value.ToString("yyyyMMddHHmmssffff");
+        }
+
         private void decryptToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DecryptFile(false, string.Empty);
@@ -142,6 +147,7 @@ namespace UniqPlayer
             if (!fromOpen && string.IsNullOrEmpty(path))
             {
                 FolderBrowserDialog folderDialog = new FolderBrowserDialog();
+                folderDialog.ShowNewFolderButton = false;
                 DialogResult result = folderDialog.ShowDialog();
                 if (result == DialogResult.OK)
                 {
@@ -167,7 +173,7 @@ namespace UniqPlayer
                 { Directory.CreateDirectory(path + @"Decrypted Files"); }
 
                 destFilename = path + @"Decrypted Files\";
-                srcFilename = path;// + @"\";
+                srcFilename = path;
             }
 
             string tempFilePath = destFilename;
@@ -177,7 +183,7 @@ namespace UniqPlayer
 
             for (int i = 0; i < totalFiles; i++)
             {
-                destFilename += "dec_" + i + ".mp4";
+                destFilename += "dec_" + GetTimestamp(DateTime.Now) + ".mp4";
 
                 var aes = new AesManaged();
                 aes.BlockSize = aes.LegalBlockSizes[0].MaxSize;
