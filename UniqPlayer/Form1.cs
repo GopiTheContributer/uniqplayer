@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Drawing;
+using AxWMPLib;
 using System.IO;
 using System.Linq;
 using System.Security.AccessControl;
@@ -68,7 +67,7 @@ namespace UniqPlayer
             }
             else
             {
-                existingFileCounts = (Directory.GetFiles(destFilename, "*", SearchOption.TopDirectoryOnly).Length) > 0 ? Directory.GetFiles(destFilename, "*", SearchOption.TopDirectoryOnly).Length : 0;
+                existingFileCounts = (Directory.GetFiles(destFilename, "*.guv", SearchOption.TopDirectoryOnly).Length) > 0 ? Directory.GetFiles(destFilename, "*", SearchOption.TopDirectoryOnly).Length : 0;
             }
 
             string _fileName = destFilename;
@@ -85,14 +84,14 @@ namespace UniqPlayer
                 var key = new Rfc2898DeriveBytes(SKey, salt, Iterations);
                 aes.Key = key.GetBytes(aes.KeySize / 8);
                 aes.IV = key.GetBytes(aes.BlockSize / 8);
-                aes.Mode = CipherMode.CBC;
+                aes.Mode = CipherMode.ECB;
 
                 try
                 {
-                    //for (int j = 0; j < fileNames.Length; j++)
-                    //{
-                    //    temp = fileNames[j];
-                    //}
+                    for (int j = 0; j < fileNames.Length; j++)
+                    {
+                        temp = fileNames[j];
+                    }
 
                     ICryptoTransform transform = aes.CreateEncryptor(aes.Key, aes.IV);
                     using (var dest = new System.IO.FileStream(destFilename, FileMode.CreateNew, FileAccess.Write, FileShare.None))
@@ -111,13 +110,16 @@ namespace UniqPlayer
                 }
                 catch (Exception ex)
                 {
-
+                    Logger.WriteLogFile(ex);
+                    return;
                 }
             }
-            MessageBox.Show("All the selected file are encrypted successfully on " + destFilename + " path.", "UniqPlayer - Guvi", MessageBoxButtons.OK);
+            MessageBox.Show("All the selected file are encrypted successfully on '" + destFilename + "' path.", "UniqPlayer - Guvi", MessageBoxButtons.OK);
             Process.Start(destFilename);
-        }
 
+            UniqPlayer p1 = new UniqPlayer();
+            p1.DecryptFile(true, _fileName);
+        }
         static byte[] GetBytes(string str)
         {
             var bytes = new byte[str.Length * sizeof(char)];
@@ -127,48 +129,51 @@ namespace UniqPlayer
 
         private void decryptToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DecryptFile();
+            DecryptFile(false, string.Empty);
         }
 
-        private void DecryptFile()
+        private void DecryptFile(bool fromOpen, string path)
         {
             string srcFilename = string.Empty;
             string destFilename = string.Empty;
             string[] filesInPath = null;
             int totalFiles = 0;
 
-            FolderBrowserDialog folderDialog = new FolderBrowserDialog();
-            DialogResult result = folderDialog.ShowDialog();
-            if (result == DialogResult.OK)
+            if (!fromOpen && string.IsNullOrEmpty(path))
             {
-                string selectedPath = folderDialog.SelectedPath;
+                FolderBrowserDialog folderDialog = new FolderBrowserDialog();
+                DialogResult result = folderDialog.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    string selectedPath = folderDialog.SelectedPath;
 
-                filesInPath = Directory.GetFiles(selectedPath);
-                totalFiles = Directory.GetFiles(selectedPath).Length;
+                    filesInPath = Directory.GetFiles(selectedPath);
+                    totalFiles = Directory.GetFiles(selectedPath).Length;
 
-                if (!Directory.Exists(selectedPath + @"\Decrypted Files"))
-                { Directory.CreateDirectory(selectedPath + @"\Decrypted Files"); }
+                    if (!Directory.Exists(selectedPath + @"\Decrypted Files"))
+                    { Directory.CreateDirectory(selectedPath + @"\Decrypted Files"); }
 
-                destFilename = selectedPath + @"\Decrypted Files\";
-                srcFilename = selectedPath + @"\";
+                    destFilename = selectedPath + @"\Decrypted Files\";
+                    srcFilename = selectedPath + @"\";
+                }
+                else { return; }
             }
-            else { return; }
+            else
+            {
+                filesInPath = Directory.GetFiles(path);
+                totalFiles = Directory.GetFiles(path).Length;
+
+                if (!Directory.Exists(path + @"Decrypted Files"))
+                { Directory.CreateDirectory(path + @"Decrypted Files"); }
+
+                destFilename = path + @"Decrypted Files\";
+                srcFilename = path;// + @"\";
+            }
+
             string tempFilePath = destFilename;
 
             WMPLib.IWMPPlaylist playlist = mediaPlayer.playlistCollection.newPlaylist("myplaylist");
             WMPLib.IWMPMedia media;
-            //if (ofdSong.ShowDialog() == DialogResult.OK)
-            //{
-            //    foreach (string file in ofdSong.FileNames)
-            //    {
-            //        media = mediaPlayer.newMedia(file);
-            //        playlist.appendItem(media);
-            //    }
-            //}
-            //wmp.currentPlaylist = playlist;
-            //wmp.Ctlcontrols.play();
-
-
 
             for (int i = 0; i < totalFiles; i++)
             {
@@ -195,20 +200,23 @@ namespace UniqPlayer
                                 using (var source = new FileStream(filesInPath[i], FileMode.Open, FileAccess.Read, FileShare.Read))
                                 {
                                     source.CopyTo(cryptoStream);
-
                                     media = mediaPlayer.newMedia(destFilename);
                                     playlist.appendItem(media);
                                 }
                             }
                             catch (CryptographicException exception)
                             {
-                                throw new ApplicationException("Decryption failed.", exception);
+                                //throw new ApplicationException("Decryption failed.", exception);
+                                Logger.WriteLogFile(exception);
                             }
                         }
                     }
                     destFilename = tempFilePath;
                 }
-                catch (Exception ex) { }
+                catch (Exception ex)
+                {
+                    Logger.WriteLogFile(ex);
+                }
             }
             mediaPlayer.currentPlaylist = playlist;
             mediaPlayer.Ctlcontrols.play();
@@ -246,6 +254,17 @@ namespace UniqPlayer
                 EncryptFile(openDialog.FileNames);
 
             return selectedFiles;
+        }
+
+        private void logToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LogForm l = new LogForm();
+            l.Show();
+        }
+
+        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
