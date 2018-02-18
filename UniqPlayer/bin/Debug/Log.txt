@@ -1,9 +1,2 @@
 ﻿UniqPlayer - Log file
-**********************   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
-   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
-   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
-   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
-   at System.IO.Stream.Close()
-   at System.IO.Stream.Dispose()
-   at UniqPlayer.UniqPlayer.DecryptFile(Boolean fromOpen, String path) in E:\Mine\Learning\player\UniqPlayer\UniqPlayer\Form1.cs:line 212
-
+**********************

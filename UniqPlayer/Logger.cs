@@ -9,8 +9,6 @@ namespace UniqPlayer
 {
     class Logger
     {
-        private static String ErrorlineNo, Errormsg, extype, exurl, hostIp, ErrorLocation, HostAdd;
-
         public static void WriteLogFile(Exception ex)
         {
             string filePath = Application.StartupPath + "\\Log.txt";

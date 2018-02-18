@@ -84,7 +84,7 @@ namespace UniqPlayer
                 var key = new Rfc2898DeriveBytes(SKey, salt, Iterations);
                 aes.Key = key.GetBytes(aes.KeySize / 8);
                 aes.IV = key.GetBytes(aes.BlockSize / 8);
-                aes.Mode = CipherMode.ECB;
+                aes.Mode = CipherMode.CBC;
 
                 try
                 {
@@ -114,8 +114,8 @@ namespace UniqPlayer
                     return;
                 }
             }
-            MessageBox.Show("All the selected file are encrypted successfully on '" + destFilename + "' path.", "UniqPlayer - Guvi", MessageBoxButtons.OK);
-            Process.Start(destFilename);
+            //MessageBox.Show("All the selected file are encrypted successfully on '" + destFilename + "' path.", "UniqPlayer - Guvi", MessageBoxButtons.OK);
+            //Process.Start(destFilename);
 
             UniqPlayer p1 = new UniqPlayer();
             p1.DecryptFile(true, _fileName);
@@ -200,17 +200,16 @@ namespace UniqPlayer
                                 using (var source = new FileStream(filesInPath[i], FileMode.Open, FileAccess.Read, FileShare.Read))
                                 {
                                     source.CopyTo(cryptoStream);
-                                    media = mediaPlayer.newMedia(destFilename);
-                                    playlist.appendItem(media);
                                 }
                             }
                             catch (CryptographicException exception)
                             {
-                                //throw new ApplicationException("Decryption failed.", exception);
                                 Logger.WriteLogFile(exception);
                             }
                         }
                     }
+                    media = mediaPlayer.newMedia(destFilename);
+                    playlist.appendItem(media);
                     destFilename = tempFilePath;
                 }
                 catch (Exception ex)
