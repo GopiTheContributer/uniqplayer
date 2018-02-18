@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniqPlayer", "UniqPlayer\UniqPlayer.csproj", "{C6F5E937-4107-4C7F-A1C9-237F0542D783}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "UniqPlayer - Setup", "UniqPlayer - Setup\UniqPlayer - Setup.vdproj", "{1FF25435-F2E2-44F6-9ACB-6359CD1CAA29}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,8 @@ Global
 		{C6F5E937-4107-4C7F-A1C9-237F0542D783}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C6F5E937-4107-4C7F-A1C9-237F0542D783}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C6F5E937-4107-4C7F-A1C9-237F0542D783}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FF25435-F2E2-44F6-9ACB-6359CD1CAA29}.Debug|Any CPU.ActiveCfg = Debug
+		{1FF25435-F2E2-44F6-9ACB-6359CD1CAA29}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
