@@ -209,15 +209,15 @@ namespace UniqPlayer
                             }
                         }
                     }
-                    media = mediaPlayer.newMedia(destFilename);
-                    playlist.appendItem(media);
-                    destFilename = tempFilePath;
+                   // destFilename = tempFilePath;
                 }
                 catch (Exception ex)
                 {
                     Logger.WriteLogFile(ex);
                 }
             }
+            media = mediaPlayer.newMedia(destFilename);
+            playlist.appendItem(media);
             mediaPlayer.currentPlaylist = playlist;
             mediaPlayer.Ctlcontrols.play();
         }

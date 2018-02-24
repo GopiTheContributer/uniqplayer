@@ -9,7 +9,6 @@ E:\Mine\Learning\player\uniqplayer\UniqPlayer\bin\Release\UniqPlayer.exe
 E:\Mine\Learning\player\uniqplayer\UniqPlayer\bin\Release\UniqPlayer.pdb
 E:\Mine\Learning\player\uniqplayer\UniqPlayer\bin\Release\Interop.WMPLib.dll
 E:\Mine\Learning\player\uniqplayer\UniqPlayer\bin\Release\AxInterop.WMPLib.dll
-E:\Mine\Learning\player\uniqplayer\UniqPlayer\obj\Release\UniqPlayer.csprojResolveAssemblyReference.cache
 E:\Mine\Learning\player\uniqplayer\UniqPlayer\obj\Release\UniqPlayer.UniqPlayer.resources
 E:\Mine\Learning\player\uniqplayer\UniqPlayer\obj\Release\UniqPlayer.LogForm.resources
 E:\Mine\Learning\player\uniqplayer\UniqPlayer\obj\Release\UniqPlayer.Properties.Resources.resources
