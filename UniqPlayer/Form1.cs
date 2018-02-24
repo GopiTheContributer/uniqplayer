@@ -36,13 +36,12 @@ namespace UniqPlayer
 
         public static void EncryptFile(string[] fileNames)
         {
-            //string srcFilename = @"E:\Study Material\Video Tutorials\lamda.mp4";
-            string destFilename = string.Empty; // @"C:\Users\Gopi\Desktop\New folder\test.guv";
+            string destFilename = string.Empty;
 
             if (fileNames == null)
             {
                 UniqPlayer p = new UniqPlayer();
-                fileNames = p.OpenDialogFunctionalities();
+                fileNames = p.OpenDialogFunctionalities(false);
             }
 
             UniqPlayer uniqPlayerObject = new UniqPlayer();
@@ -71,8 +70,8 @@ namespace UniqPlayer
             }
 
             string _fileName = destFilename;
-            //int limitValue = existingFileCounts + fileNames.Length;
             string temp = string.Empty;
+            UniqPlayer p1 = new UniqPlayer();
 
             for (int i = 0; i < fileNames.Length; i++)
             {
@@ -88,24 +87,17 @@ namespace UniqPlayer
 
                 try
                 {
-                    //for (int j = 0; j < fileNames.Length; j++)
-                    //{
-                    //    temp = fileNames[j];
-                    //}
-
                     ICryptoTransform transform = aes.CreateEncryptor(aes.Key, aes.IV);
                     using (var dest = new System.IO.FileStream(destFilename, FileMode.CreateNew, FileAccess.Write, FileShare.None))
                     {
                         using (var cryptoStream = new CryptoStream(dest, transform, CryptoStreamMode.Write))
                         {
-                            //TODO: filename needs to be corrected.
                             using (var source = new FileStream(fileNames[i], FileMode.Open, FileAccess.Read, FileShare.Read))
                             {
                                 source.CopyTo(cryptoStream);
                             }
                         }
                     }
-
                     destFilename = _fileName;
                 }
                 catch (Exception ex)
@@ -113,12 +105,15 @@ namespace UniqPlayer
                     Logger.WriteLogFile(ex);
                     return;
                 }
+                finally
+                {
+
+                }
             }
             //MessageBox.Show("All the selected file are encrypted successfully on '" + destFilename + "' path.", "UniqPlayer - Guvi", MessageBoxButtons.OK);
             //Process.Start(destFilename);
 
-            UniqPlayer p1 = new UniqPlayer();
-            p1.DecryptFile(true, _fileName);
+            p1.DecryptFile(true, destFilename);
         }
         static byte[] GetBytes(string str)
         {
@@ -235,7 +230,7 @@ namespace UniqPlayer
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenDialogFunctionalities();
+            OpenDialogFunctionalities(true);
         }
 
         private string GetAvailableDrivesOnSystem()
@@ -244,7 +239,7 @@ namespace UniqPlayer
             return availableDrives.Select(x => x).FirstOrDefault().ToString();
         }
 
-        private string[] OpenDialogFunctionalities()
+        private string[] OpenDialogFunctionalities(bool isFromOpenMenu)
         {
             OpenFileDialog openDialog = new OpenFileDialog();
             openDialog.Multiselect = true;
@@ -255,8 +250,9 @@ namespace UniqPlayer
 
             string[] selectedFiles = openDialog.FileNames;
 
-            if (openDialog.ShowDialog() == DialogResult.OK)
+            if ((openDialog.ShowDialog() == DialogResult.OK) && isFromOpenMenu)
                 EncryptFile(openDialog.FileNames);
+            else selectedFiles = openDialog.FileNames;
 
             return selectedFiles;
         }
