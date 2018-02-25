@@ -174,7 +174,10 @@ namespace UniqPlayer
             string tempFilePath = destFilename;
 
             //AXVLC.IVLCPlaylist playlist = mediaPlayer.playlist.add();
-            //WMPLib.IWMPMedia media;
+
+            WMPLib.IWMPPlaylist playlist = mediaPlayer.playlistCollection.newPlaylist("myplaylist");
+            WMPLib.IWMPMedia media;
+
 
             for (int i = 0; i < totalFiles; i++)
             {
@@ -209,10 +212,9 @@ namespace UniqPlayer
                             }
                         }
                     }
-                    //media = mediaPlayer.newMedia(destFilename);
-                    //playlist.appendItem(media);
-                    mediaPlayer.playlist.add("file:///" + destFilename, null, null);
-                    mediaPlayer.playlist.play();
+
+                    media = mediaPlayer.newMedia(destFilename);
+                    playlist.appendItem(media);
                     destFilename = tempFilePath;
                 }
                 catch (Exception ex)
@@ -220,10 +222,8 @@ namespace UniqPlayer
                     Logger.WriteLogFile(ex);
                 }
             }
-            //mediaPlayer.currentPlaylist = playlist;
-            //mediaPlayer.Ctlcontrols.play();
-
-
+            mediaPlayer.currentPlaylist = playlist;
+            mediaPlayer.Ctlcontrols.play();
         }
 
         //close the application entirely

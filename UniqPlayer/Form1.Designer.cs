@@ -40,7 +40,7 @@
             this.logToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
-            this.mediaPlayer = new AxAXVLC.AxVLCPlugin2();
+            this.mediaPlayer = new AxWMPLib.AxWindowsMediaPlayer();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mediaPlayer)).BeginInit();
             this.SuspendLayout();
@@ -128,12 +128,11 @@
             // mediaPlayer
             // 
             this.mediaPlayer.Enabled = true;
-            this.mediaPlayer.Location = new System.Drawing.Point(26, 38);
+            this.mediaPlayer.Location = new System.Drawing.Point(78, 69);
             this.mediaPlayer.Name = "mediaPlayer";
             this.mediaPlayer.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("mediaPlayer.OcxState")));
-            this.mediaPlayer.Size = new System.Drawing.Size(320, 240);
-            this.mediaPlayer.TabIndex = 3;
-            this.mediaPlayer.Enter += new System.EventHandler(this.axVLCPlugin21_Enter);
+            this.mediaPlayer.Size = new System.Drawing.Size(205, 161);
+            this.mediaPlayer.TabIndex = 2;
             // 
             // UniqPlayer
             // 
@@ -166,7 +165,7 @@
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.ToolStripMenuItem logToolStripMenuItem;
-        private AxAXVLC.AxVLCPlugin2 mediaPlayer;
+        private AxWMPLib.AxWindowsMediaPlayer mediaPlayer;
     }
 }
 
