@@ -173,8 +173,8 @@ namespace UniqPlayer
 
             string tempFilePath = destFilename;
 
-            WMPLib.IWMPPlaylist playlist = mediaPlayer.playlistCollection.newPlaylist("myplaylist");
-            WMPLib.IWMPMedia media;
+            //AXVLC.IVLCPlaylist playlist = mediaPlayer.playlist.add();
+            //WMPLib.IWMPMedia media;
 
             for (int i = 0; i < totalFiles; i++)
             {
@@ -209,17 +209,21 @@ namespace UniqPlayer
                             }
                         }
                     }
-                   // destFilename = tempFilePath;
+                    //media = mediaPlayer.newMedia(destFilename);
+                    //playlist.appendItem(media);
+                    mediaPlayer.playlist.add("file:///" + destFilename, null, null);
+                    mediaPlayer.playlist.play();
+                    destFilename = tempFilePath;
                 }
                 catch (Exception ex)
                 {
                     Logger.WriteLogFile(ex);
                 }
             }
-            media = mediaPlayer.newMedia(destFilename);
-            playlist.appendItem(media);
-            mediaPlayer.currentPlaylist = playlist;
-            mediaPlayer.Ctlcontrols.play();
+            //mediaPlayer.currentPlaylist = playlist;
+            //mediaPlayer.Ctlcontrols.play();
+
+
         }
 
         //close the application entirely
@@ -254,6 +258,9 @@ namespace UniqPlayer
                 EncryptFile(openDialog.FileNames);
             else selectedFiles = openDialog.FileNames;
 
+            //mediaPlayer.playlist.add("file:///" + openDialog.FileName, null, null);
+            //mediaPlayer.playlist.play();
+
             return selectedFiles;
         }
 
@@ -264,6 +271,11 @@ namespace UniqPlayer
         }
 
         private void toolStripStatusLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void axVLCPlugin21_Enter(object sender, EventArgs e)
         {
 
         }
