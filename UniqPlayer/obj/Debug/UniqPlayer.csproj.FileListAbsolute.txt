@@ -20,3 +20,4 @@ E:\Mine\Learning\player\UniqPlayer\UniqPlayer\obj\Debug\UniqPlayer.csproj.Genera
 E:\Mine\Learning\player\UniqPlayer\UniqPlayer\obj\Debug\UniqPlayer.exe
 E:\Mine\Learning\player\UniqPlayer\UniqPlayer\obj\Debug\UniqPlayer.pdb
 E:\Mine\Learning\player\UniqPlayer\UniqPlayer\obj\Debug\UniqPlayer.csprojResolveAssemblyReference.cache
+E:\Mine\Learning\player\uniqplayer\UniqPlayer\obj\Debug\UniqPlayer.Login.resources

@@ -16,7 +16,7 @@ namespace UniqPlayer
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new UniqPlayer());
+            Application.Run(new Login());
         }
     }
 }
