@@ -15,3 +15,8 @@ E:\Mine\Learning\player\uniqplayer\UniqPlayer\obj\Release\UniqPlayer.Properties.
 E:\Mine\Learning\player\uniqplayer\UniqPlayer\obj\Release\UniqPlayer.csproj.GenerateResource.Cache
 E:\Mine\Learning\player\uniqplayer\UniqPlayer\obj\Release\UniqPlayer.exe
 E:\Mine\Learning\player\uniqplayer\UniqPlayer\obj\Release\UniqPlayer.pdb
+E:\Mine\Learning\player\uniqplayer\UniqPlayer\obj\Release\Interop.AXVLC.dll
+E:\Mine\Learning\player\uniqplayer\UniqPlayer\obj\Release\AxInterop.AXVLC.dll
+E:\Mine\Learning\player\uniqplayer\UniqPlayer\bin\Release\Interop.AXVLC.dll
+E:\Mine\Learning\player\uniqplayer\UniqPlayer\bin\Release\AxInterop.AXVLC.dll
+E:\Mine\Learning\player\uniqplayer\UniqPlayer\obj\Release\UniqPlayer.Login.resources

@@ -27,6 +27,7 @@ namespace UniqPlayer
             if (string.IsNullOrEmpty(txtUsername.Text) || string.IsNullOrEmpty(txtPassword.Text))
             {
                 ShowValidationMessage("All fields are mandatory");
+                return;
             }
 
             if (txtUsername.Text == "admin" && txtPassword.Text == "admin")
@@ -39,6 +40,7 @@ namespace UniqPlayer
             else
             {
                 ShowValidationMessage("username and password is incorrect");
+                return;
             }
         }
 
@@ -48,7 +50,6 @@ namespace UniqPlayer
             txtPassword.Text = string.Empty;
             txtUsername.Text = string.Empty;
             txtUsername.Focus();
-            return;
         }
     }
 }

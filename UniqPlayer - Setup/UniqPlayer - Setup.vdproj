@@ -15,19 +15,13 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_083313B4690D593CA4CC000048CC807E"
+        "MsmKey" = "8:_040DB78A8AF7955C978AF4DC2C299135"
         "OwnerKey" = "8:_509BEF4F7A3747D0BA51AD471CFDC762"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_15317604BE44B523F89A4C094362F268"
-        "OwnerKey" = "8:_083313B4690D593CA4CC000048CC807E"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_15317604BE44B523F89A4C094362F268"
+        "MsmKey" = "8:_0577E9E869E3C126A99227054233B6F1"
         "OwnerKey" = "8:_509BEF4F7A3747D0BA51AD471CFDC762"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -46,13 +40,37 @@
         "Entry"
         {
         "MsmKey" = "8:_33569E7C032D9C44D1EB2FCFC238E740"
-        "OwnerKey" = "8:_15317604BE44B523F89A4C094362F268"
+        "OwnerKey" = "8:_3C9B376798D84E6431B6FA877D16046C"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_3C9B376798D84E6431B6FA877D16046C"
+        "OwnerKey" = "8:_0577E9E869E3C126A99227054233B6F1"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_3C9B376798D84E6431B6FA877D16046C"
+        "OwnerKey" = "8:_509BEF4F7A3747D0BA51AD471CFDC762"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_509BEF4F7A3747D0BA51AD471CFDC762"
         "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_CA18EBDE15B3793771B1FAE2AC945E23"
+        "OwnerKey" = "8:_040DB78A8AF7955C978AF4DC2C299135"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_CA18EBDE15B3793771B1FAE2AC945E23"
+        "OwnerKey" = "8:_509BEF4F7A3747D0BA51AD471CFDC762"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -64,25 +82,37 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_CB0D661BEEC6DD0D068541469F183007"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_509BEF4F7A3747D0BA51AD471CFDC762"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_083313B4690D593CA4CC000048CC807E"
+        "OwnerKey" = "8:_0577E9E869E3C126A99227054233B6F1"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_15317604BE44B523F89A4C094362F268"
+        "OwnerKey" = "8:_3C9B376798D84E6431B6FA877D16046C"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_040DB78A8AF7955C978AF4DC2C299135"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_CA18EBDE15B3793771B1FAE2AC945E23"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_CB0D661BEEC6DD0D068541469F183007"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -103,6 +133,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -119,6 +157,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -148,20 +194,20 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_083313B4690D593CA4CC000048CC807E"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_040DB78A8AF7955C978AF4DC2C299135"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:AxInterop.WMPLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:AxInterop.AXVLC, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_083313B4690D593CA4CC000048CC807E"
+                    "_040DB78A8AF7955C978AF4DC2C299135"
                     {
-                    "Name" = "8:AxInterop.WMPLib.dll"
+                    "Name" = "8:AxInterop.AXVLC.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:AxInterop.WMPLib.dll"
+            "SourcePath" = "8:AxInterop.AXVLC.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_1A545CDB65404CB2BCDF2F09552351DC"
@@ -179,20 +225,20 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_15317604BE44B523F89A4C094362F268"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_0577E9E869E3C126A99227054233B6F1"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Interop.WMPLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:AxInterop.WMPLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_15317604BE44B523F89A4C094362F268"
+                    "_0577E9E869E3C126A99227054233B6F1"
                     {
-                    "Name" = "8:Interop.WMPLib.dll"
+                    "Name" = "8:AxInterop.WMPLib.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:Interop.WMPLib.dll"
+            "SourcePath" = "8:AxInterop.WMPLib.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_1A545CDB65404CB2BCDF2F09552351DC"
@@ -254,6 +300,68 @@
             {
             "SourcePath" = "8:wmp.dll"
             "TargetName" = "8:wmp.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_1A545CDB65404CB2BCDF2F09552351DC"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_3C9B376798D84E6431B6FA877D16046C"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Interop.WMPLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_3C9B376798D84E6431B6FA877D16046C"
+                    {
+                    "Name" = "8:Interop.WMPLib.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Interop.WMPLib.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_1A545CDB65404CB2BCDF2F09552351DC"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_CA18EBDE15B3793771B1FAE2AC945E23"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Interop.AXVLC, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_CA18EBDE15B3793771B1FAE2AC945E23"
+                    {
+                    "Name" = "8:Interop.AXVLC.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Interop.AXVLC.dll"
+            "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_1A545CDB65404CB2BCDF2F09552351DC"
             "Condition" = "8:"
@@ -359,6 +467,17 @@
                     "Property" = "8:_02F763C8FE0E48F1AA9394599F47582E"
                         "Folders"
                         {
+                            "{9EF0B969-E518-4E46-987F-47570745A589}:_C4A97D939114402B8DC0DA5691C2F38F"
+                            {
+                            "Name" = "8:Unistall"
+                            "AlwaysCreate" = "11:FALSE"
+                            "Condition" = "8:"
+                            "Transitive" = "11:FALSE"
+                            "Property" = "8:_8C297F6B443F4DD09D371B73AB714480"
+                                "Folders"
+                                {
+                                }
+                            }
                         }
                     }
                 }
@@ -509,7 +628,7 @@
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
             "Target" = "8:_509BEF4F7A3747D0BA51AD471CFDC762"
-            "Folder" = "8:_976644835A9940F592A32B9F8FE89393"
+            "Folder" = "8:_C4A97D939114402B8DC0DA5691C2F38F"
             "WorkingFolder" = "8:_1A545CDB65404CB2BCDF2F09552351DC"
             "Icon" = "8:"
             "Feature" = "8:"
@@ -943,7 +1062,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_509BEF4F7A3747D0BA51AD471CFDC762"
             {
-            "SourcePath" = "8:..\\UniqPlayer\\obj\\Debug\\UniqPlayer.exe"
+            "SourcePath" = "8:..\\UniqPlayer\\obj\\Release\\UniqPlayer.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_1A545CDB65404CB2BCDF2F09552351DC"
