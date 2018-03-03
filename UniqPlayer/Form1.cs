@@ -167,10 +167,10 @@ namespace UniqPlayer
                 filesInPath = Directory.GetFiles(path);
                 totalFiles = Directory.GetFiles(path).Length;
 
-                if (!Directory.Exists(path + @"Decrypted Files"))
-                { Directory.CreateDirectory(path + @"Decrypted Files"); }
+                if (!Directory.Exists(path + @"\Decrypted Files"))
+                { Directory.CreateDirectory(path + @"\Decrypted Files"); }
 
-                destFilename = path + @"Decrypted Files\";
+                destFilename = path + @"\Decrypted Files\";
                 srcFilename = path;
 
 
